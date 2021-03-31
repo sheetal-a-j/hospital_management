@@ -1,0 +1,68 @@
+// Place all the styles related to the home controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.background{
+    background: url('pg.jpg') no-repeat center center;
+   height:25rem;
+   width:100%;
+   background-size:contain;
+
+}
+.head{
+    color:aquamarine;
+}
+.text{
+    text-align: left;
+}
+.link{
+  
+    text-align: center;
+    
+}
+
+// .button {
+//     border-radius: 4px;
+//     background-color: aquamarine;
+//     border: none;
+//     color: #FFFFFF;
+//     text-align: center;
+//     font-size: 28px;
+//     padding: 20px;
+//     width: 200px;
+//     transition: all 0.5s;
+//     cursor: pointer;
+//     margin: 5px auto;
+//     align-self: auto;
+//   }
+  
+//   .button span {
+//     cursor: pointer;
+//     display: inline-block;
+//     position: relative;
+//     transition: 0.5s;
+//   }
+  
+//   .button span:after {
+//     content: '\00bb';
+//     position: absolute;
+//     opacity: 0;
+//     top: 0;
+//     right: -20px;
+//     transition: 0.5s;
+//   }
+  
+//   .button:hover span {
+//     padding-right: 25px;
+//   }
+  
+//   .button:hover span:after {
+//     opacity: 1;
+//     right: 0;
+//   }
+
+.link .btn-primary{
+background-color: aquamarine!important;
+color: black;
+}
+
+    /* For a full size background image */

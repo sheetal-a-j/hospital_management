@@ -1,0 +1,69 @@
+<%= form_with(model: appointment) do |form| %>
+  <% if appointment.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(appointment.errors.count, "error") %> prohibited this appointment from being saved:</h2>
+
+      <ul>
+        <% appointment.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+   <div class="field form-group">
+    <%= form.label :patientID %>
+    <%= form.text_field :patient_id, id: :appointment_patient_id, class:"form-control", value: current_patient.id %>
+
+  </div>
+  <div class="field form-group">
+    <% form.label :name %>
+    <%= form.text_field :name, class:"form-control", placeholder:"Enter Name" %>
+  </div>
+
+  <div class="field form-group">
+    <% form.label :age %>
+    <%= form.number_field :age, class:"form-control", placeholder:"Enter age" %>
+  </div>
+
+  <div class="field form-group">
+    <% form.label :disease %>
+    <%= form.text_field :disease, class:"form-control", placeholder:"Enter disease" %>
+  </div>
+  
+  <div class="field form-group">
+    <% form.label :phone %>
+    <%= form.number_field :phone, class:"form-control", placeholder:"Enter Phone number" %>
+  </div>
+  <br>
+  <div class="field form-group">
+    <%= form.label :Date %>
+    <%= form.date_select :day, class:"form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.label :time %>
+    <%= form.time_select :time, class:"form-control" %>
+  </div>
+  <div class="field form-group">
+    <%= form.label :gender %>
+    <%= form.radio_button :gender, 'male' %> male
+    <%= form.radio_button :gender, 'female' %> female
+  </div>
+  <% if current_patient.admin==true%>
+  <div class="field form-group ">
+    <%= form.label :status %>
+    <%= form.radio_button :status, 'pending', checked: true %> pending
+    <%= form.radio_button :status, 'approved' %> approved
+    <%= form.radio_button :status, 'cancelled' %> cancelled
+  </div>
+  
+  
+  <% end %>
+
+  
+
+  <div class="actions ">
+    <%= form.submit class:"btn btn-outline-success" %>
+  </div>
+<% end %>

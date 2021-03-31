@@ -1,0 +1,54 @@
+
+
+<h1 class="head">~Appointments History~</h1>
+
+<table class="table table-striped table-hover">
+  <thead>
+    <tr>
+      <th>Patient Id</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Disease</th>
+      <th>Day</th>
+      <th>Time</th>
+      <th>Phone</th>
+      <th>gender</th>
+      <th>status</th>
+      
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @appointments.each do |appointment| %>
+    <% if appointment.patient == current_patient%>
+      <tr>
+        <td><%= appointment.patient_id %></td>
+        <td><%= appointment.name %></td>
+        <td><%= appointment.age %></td>
+        <td><%= appointment.disease %></td>
+        <td><%= appointment.day %></td>
+        <td><%= appointment.time.strftime("%I:%M") %></td>
+        <td><%= appointment.phone %></td>
+        <td><%= appointment.gender %></td>
+        <% if appointment.status=="approve" %>
+           <td class='color-green'><%= appointment.status %></td>
+        <% elsif appointment.status=="pending" %>
+           <td class='color-yellow'><%= appointment.status %></td>
+        <% else %>
+           <td class='color-red'><%= appointment.status %> </td>
+        <% end %>
+        
+        
+        <td><%= link_to 'Show', appointment, class:"btn btn-secondary" %></td>
+        <td><%= link_to 'Edit', edit_appointment_path(appointment),class:"btn btn-secondary" %></td>
+        <td><%= link_to 'Destroy', appointment, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %></td>
+      </tr>
+      <% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Take Appointment', new_appointment_path, class:"btn btn-secondary" %>

@@ -1,0 +1,19 @@
+<div class="container">
+<div class="background">
+</div>
+<h1 class="text-center head">Welcome to The Arogya Hospital!!</h1>
+<p class="text">The doctor of the future will give no medication, but will interest his patients in the care of the human frame, diet and in the cause and prevention of disease. 
+</p>
+
+ <% if patient_signed_in?%>
+ <div class="link">
+
+<%= link_to 'Take Appointment', new_appointment_path, class:"btn btn-primary btn-lg " %>
+</div>
+<% else %>
+<div class="link">
+   <%= link_to 'Sign up',  new_patient_registration_path, class:"btn btn-primary btn-lg"%>
+</div>
+<% end %>
+</div>
+
