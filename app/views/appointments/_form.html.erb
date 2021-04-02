@@ -50,16 +50,14 @@
     <%= form.radio_button :gender, 'male' %> male
     <%= form.radio_button :gender, 'female' %> female
   </div>
-  <% if current_patient.admin==true%>
-  <div class="field form-group ">
-    <%= form.label :status %>
-    <%= form.radio_button :status, 'pending', checked: true %> pending
-    <%= form.radio_button :status, 'approved' %> approved
-    <%= form.radio_button :status, 'cancelled' %> cancelled
+
+  <div class="field form-group">
+    <% form.label :status %>
+    <%= form.text_field :status, class:"form-control", value:"pending", type: :hidden %>
   </div>
   
   
-  <% end %>
+ 
 
   
 

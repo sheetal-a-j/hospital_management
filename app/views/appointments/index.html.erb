@@ -1,7 +1,7 @@
 
 
 <h1 class="head">~Appointments History~</h1>
-
+<div class="form-table">
 <table class="table table-striped table-hover">
   <thead>
     <tr>
@@ -32,23 +32,33 @@
         <td><%= appointment.phone %></td>
         <td><%= appointment.gender %></td>
         <% if appointment.status=="approve" %>
-           <td class='color-green'><%= appointment.status %></td>
+           <td class='color-orange'><%= appointment.status %></td>
+           
         <% elsif appointment.status=="pending" %>
            <td class='color-yellow'><%= appointment.status %></td>
+      
+        <% elsif appointment.status=="done" %>
+           <td class='color-green'><%= appointment.status %></td>
         <% else %>
            <td class='color-red'><%= appointment.status %> </td>
         <% end %>
         
-        
+        <% if appointment.status!="done" %>
         <td><%= link_to 'Show', appointment, class:"btn btn-secondary" %></td>
         <td><%= link_to 'Edit', edit_appointment_path(appointment),class:"btn btn-secondary" %></td>
         <td><%= link_to 'Destroy', appointment, method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-danger" %></td>
+        <% else %>
+        <td><%= link_to 'Show', appointment, class:"btn btn-secondary" %></td>
+        <td></td>
+        <td></td>
+        <% end %>
       </tr>
       <% end %>
     <% end %>
   </tbody>
 </table>
-
+</div>
+<br>
 <br>
 
 <%= link_to 'Take Appointment', new_appointment_path, class:"btn btn-secondary" %>

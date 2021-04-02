@@ -1,6 +1,9 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+nav{
+    margin-bottom: 3rem;
+}
 .background{
     background: url('pg.jpg') no-repeat center center;
    height:25rem;
@@ -10,9 +13,10 @@
 }
 .head{
     color:aquamarine;
+    font-size: 2rem;
 }
 .text{
-    text-align: left;
+    text-align: center;
 }
 .link{
   
@@ -20,49 +24,45 @@
     
 }
 
-// .button {
-//     border-radius: 4px;
-//     background-color: aquamarine;
-//     border: none;
-//     color: #FFFFFF;
-//     text-align: center;
-//     font-size: 28px;
-//     padding: 20px;
-//     width: 200px;
-//     transition: all 0.5s;
-//     cursor: pointer;
-//     margin: 5px auto;
-//     align-self: auto;
-//   }
-  
-//   .button span {
-//     cursor: pointer;
-//     display: inline-block;
-//     position: relative;
-//     transition: 0.5s;
-//   }
-  
-//   .button span:after {
-//     content: '\00bb';
-//     position: absolute;
-//     opacity: 0;
-//     top: 0;
-//     right: -20px;
-//     transition: 0.5s;
-//   }
-  
-//   .button:hover span {
-//     padding-right: 25px;
-//   }
-  
-//   .button:hover span:after {
-//     opacity: 1;
-//     right: 0;
-//   }
 
 .link .btn-primary{
 background-color: aquamarine!important;
 color: black;
 }
-
+.navbar-brand{
+    color:green!important;
+    font-size: 1.6rem!important;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.nav-item{
+    font-size: 1.3rem;
+    padding:1rem;
+    
+}
+.nav-link{
+    color:  cadetblue!important;
+    
+}
+.nav-link:hover{
+    color: black!important;
+    background-color: cadetblue;
+    border-radius: 1rem;
+    padding:0.5rem;
+}
+.navbar-nav {
+    margin-left: 2rem;
+    
+}
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color:cadetblue;
+    color: black;
+    text-align: center;
+ }
+ footer p{
+     margin-top: 1rem;
+ }
     /* For a full size background image */
